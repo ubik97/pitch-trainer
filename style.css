@@ -1,0 +1,15 @@
+#key {
+  font-size: 0;
+}
+
+.natural {
+  height: 200px;
+  width: 50px;
+  background-color: white;
+}
+
+.sharp {
+  height: 160px;
+  width: 40px;
+  background-color: black;
+}
