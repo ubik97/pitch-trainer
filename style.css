@@ -1,3 +1,11 @@
+#keyboard {
+  position: absolute;
+  top: 400px;
+  left: 450px;
+}
+
+
+
 #key {
   font-size: 0;
 }
@@ -6,10 +14,49 @@
   height: 200px;
   width: 50px;
   background-color: white;
+  margin: 1px;
+
 }
 
 .sharp {
-  height: 160px;
+  height: 150px;
   width: 40px;
   background-color: black;
+}
+
+
+
+#cSharpDiv {
+  position: absolute;
+  left: 475px;
+  top: 400px;
+  width: 50px;
+}
+
+#dSharpDiv {
+  position: absolute;
+  left: 535px;
+  top: 400px;
+  width: 50px;
+}
+
+#fSharpDiv {
+  position: absolute;
+  left: 645px;
+  top: 400px;
+  width: 50px;
+}
+
+#gSharpDiv {
+  position: absolute;
+  left: 700px;
+  top: 400px;
+  width: 50px;
+}
+
+#aSharpDiv {
+  position: absolute;
+  left: 755px;
+  top: 400px;
+  width: 50px;
 }
