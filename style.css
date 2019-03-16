@@ -1,10 +1,24 @@
-#keyboard {
+html {
+  background-color: #10a7a4;
+}
+
+.keyboard {
   position: absolute;
   top: 400px;
   left: 450px;
 }
 
+@font-face{
+   font-family: Comfortaa;
+   src: url('https://fonts.googleapis.com/css?family=Comfortaa');
+ }
 
+
+
+p {
+  font-family: 'Calibri', monospace;
+  color: white;
+}
 
 #key {
   font-size: 0;
