@@ -16,7 +16,7 @@ html {
 
 
 p {
-  font-family: 'Calibri', monospace;
+  font-family: 'Comfortaa', cursive;
   color: white;
 }
 
@@ -37,8 +37,6 @@ p {
   width: 40px;
   background-color: black;
 }
-
-
 
 #cSharpDiv {
   position: absolute;
@@ -73,4 +71,30 @@ p {
   left: 755px;
   top: 400px;
   width: 50px;
+}
+
+#start {
+  width: 150px;
+  height: 75px;
+  background-color: #59c0e5;
+  color: white;
+  font-weight: bold;
+  font-family: "Comfortaa", cursive;
+  font-size: 25px;
+  position: fixed;
+  top: 415px;
+  left: 100px;
+}
+
+#finish {
+  width: 150px;
+  height: 75px;
+  background-color: #59e575;
+  color: white;
+  font-weight: bold;
+  font-family: "Comfortaa", cursive;
+  font-size: 25px;
+  position: fixed;
+  top: 515px;
+  left: 100px;
 }
