@@ -5,22 +5,30 @@
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Perfect Pitch Trainer</title>
-    <script type="text/javascript" src="pitchtest.js"></script>
+    <script type="text/javascript" src="pitch-trainer.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   </head>
 
 <body>
 
-<p id="pageTitle"><h1>Pitch Practice</h1></p>
-<p><h3>An online tool for achieving perfect pitch!</h3></p>
 
-<button onclick="start()">oof</button>
+
+<center><h1><p id="pageTitle">Pitch Practice</<p></h1></center>
+<center><h3><p id="pageTitle">An online tool for achieving perfect pitch!</p></h3></center>
+
+<button id="start" onclick="start()">Start</button>
+<button id="finish">Finish</button>
+<button id="s/f:Yes">Yes</button>
+<button id="s/f:No">No</button>
+<div><p>Sharps/Flats?</p></div>
+
+
+<br/><br/><br/>
 <!-- keyboard -->
-
 <center>
 <div id="fullKeyboard">
 
-  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
   <div align="center" class="keyboard">
   <button onclick="notePlayed(261.63)" id="key" class="natural" id="Cnat">C</button>
   <button onclick="notePlayed(293.67)" id="key" class="natural" id="Dnat">D</button>
