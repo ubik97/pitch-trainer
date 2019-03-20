@@ -78,7 +78,7 @@ p {
   height: 75px;
   background-color: #59c0e5;
   color: white;
-  font-weight: bold;
+  font-weight: strong;
   font-family: "Comfortaa", cursive;
   font-size: 25px;
   position: fixed;
@@ -91,10 +91,48 @@ p {
   height: 75px;
   background-color: #59e575;
   color: white;
-  font-weight: bold;
+  font-weight: strong;
   font-family: "Comfortaa", cursive;
   font-size: 25px;
   position: fixed;
   top: 515px;
   left: 100px;
 }
+
+#sf {
+  position: fixed;
+  top: 770px;
+  left: 595px;
+}
+
+button {
+  color: white;
+  font-weight: strong;
+  font-family: "Comfortaa", cursive;
+  font-size: 25px;
+}
+
+#sfYes {
+  position: fixed;
+  background-color: #59e575;
+  font-size: 23px;
+  top: 810px;
+  left: 585px;
+}
+
+#sfNo {
+  position: fixed;
+  background-color: #ed5c4b;
+  font-size: 23px;
+  top: 810px;
+  left: 660px;
+}
+
+#feedbackBox {
+  position: fixed;
+  background-color: grey;
+  border-radius: 10px;
+  height: 270px;
+  width: 400px;
+}
+
