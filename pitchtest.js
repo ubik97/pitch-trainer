@@ -1,16 +1,23 @@
+var attempted;
+var orignal;
+var correct;
+
+
 function start() {
-  document.getElementById('start').disabled = true;
-  noteGenerator();
-}
+      orignal = noteGenerator();
+      console.log(orignal);
+
+  }
 
 function noteGenerator() {
   let noteArr = [261.63, 293.67, 329.63, 349.23, 392, 440, 493.88, 277.18, 311.13, 369.99, 415.3, 466.16];
               //[c,       d,      e,      f,     g,   a,   b,      c#,      d#,    f#,     g#,    a#     ]
   let idx = randomInt(0, 11);
   console.log(idx);
-  let correct = noteArr[idx];
+  correct = noteArr[idx];
   console.log(correct);
   playFreq(correct);
+  return correct;
 }
 
 //random number generator
@@ -18,12 +25,17 @@ function randomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
-
 }
 
 function notePlayed(note) {
 playFreq(note);
-oscillator.disconnect(audioCtx.destination);
+compare(note, correct);
+setTimeout(bleh(), 5000);
+noteGenerator();
+}
+
+function bleh() {
+  console.log("working");
 }
 
 function playFreq(freq) {
@@ -44,9 +56,5 @@ function playFreq(freq) {
 }
 
 function compare() {
-
-}
-
-function newNote() {
 
 }
