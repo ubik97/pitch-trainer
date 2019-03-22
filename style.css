@@ -132,7 +132,13 @@ button {
   position: fixed;
   background-color: grey;
   border-radius: 10px;
-  height: 270px;
+  height: 260px;
   width: 400px;
+  background-color: #59c0e5;
+  left: 440px;
+  top: 130px;
+  border-color: blue;
+  border: solid;
 }
+
 
