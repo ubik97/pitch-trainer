@@ -24,6 +24,8 @@ p {
   font-size: 0;
 }
 
+
+
 .natural {
   height: 200px;
   width: 50px;
@@ -112,6 +114,7 @@ button {
   font-size: 25px;
 }
 
+
 #sfYes {
   position: absolute;
   background-color: #59e575;
@@ -128,15 +131,15 @@ button {
   left: 660px;
 }
 
-#feedbackBox {
+#outputDiv {
   position: absolute;
   background-color: grey;
   border-radius: 10px;
-  height: 260px;
+  height: 150px;
   width: 400px;
-  background-color: #59c0e5;
+  background-color: #73c7e2;
   left: 440px;
-  top: 130px;
+  top: 180px;
   border-color: blue;
   border: solid;
 }
@@ -151,4 +154,10 @@ button {
   position: absolute;
   left: 450px;
   top: 70px;
+}
+
+#feedbackBox {
+  position: relative;
+  left: 100px;
+  top: 60px;
 }
