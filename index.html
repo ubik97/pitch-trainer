@@ -5,7 +5,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Perfect Pitch Trainer</title>
-    <script type="text/javascript" src="pitchtest.js"></script>
+    <script type="text/javascript" src="pitch-trainer.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   </head>
 
@@ -16,12 +16,16 @@
 <h1><p id="pageTitle1">Pitch Practice</<p></h1>
 <h3><p id="subtitle">An online tool for achieving perfect pitch!</p></h3>
 
-<button id="start" onclick="gameplay()">Start</button>
+<button id="start" onclick="gameplay()" disabled>Start</button>
 <button id="finish">Finish</button>
-<button id="sfYes">Yes</button>
-<button id="sfNo">No</button>
+<button id="sfYes" onclick="includeSharps(true)">Yes</button>
+<button id="sfNo" onclick="includeSharps(false)">No</button>
 <div id="sf"><p>Sharps/Flats?</p></div>
-<div id="feedbackBox"><p></p></div>
+<div id="outputDiv">
+  <div >
+    <p id="feedbackBox"></p>
+  </div>
+</div>
 
 
 <br/><br/><br/>
@@ -58,3 +62,4 @@
 
 
 </html>
+
