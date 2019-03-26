@@ -1,13 +1,33 @@
-var attempted;
+var attempted = false;
 var orignal;
 var correct;
+var playedFreq;
 
 
-function start() {
-      orignal = noteGenerator();
-      console.log(orignal);
-
+function gameplay() {
+      original = noteGenerator();
   }
+
+
+  function compare() {
+    
+  }
+
+
+  function notePlayed(note) {
+    playFreq(note);
+    compare(original, playedFreq);
+    wait(3000);
+    gameplay();
+  }
+
+  function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
 
 function noteGenerator() {
   let noteArr = [261.63, 293.67, 329.63, 349.23, 392, 440, 493.88, 277.18, 311.13, 369.99, 415.3, 466.16];
@@ -27,22 +47,14 @@ function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function notePlayed(note) {
-playFreq(note);
-compare(note, correct);
-setTimeout(bleh(), 5000);
-noteGenerator();
-}
 
-function bleh() {
-  console.log("working");
-}
 
 function playFreq(freq) {
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     var oscillator = audioCtx.createOscillator();
     var dur = 0.5;
     var stopVal = 10;
+    playedFreq = freq;
     console.log(freq);
 
     oscillator.type = 'sine';
@@ -53,8 +65,6 @@ function playFreq(freq) {
     oscillator.onended = stopVal;
     oscillator.start(0);
     oscillator.stop(audioCtx.currentTime + dur);
-}
 
-function compare() {
 
 }

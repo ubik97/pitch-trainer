@@ -8,7 +8,7 @@ html {
   left: 450px;
 }
 
-@font-face{
+@font-face {
    font-family: Comfortaa;
    src: url('https://fonts.googleapis.com/css?family=Comfortaa');
  }
@@ -81,7 +81,7 @@ p {
   font-weight: strong;
   font-family: "Comfortaa", cursive;
   font-size: 25px;
-  position: fixed;
+  position: absolute;
   top: 415px;
   left: 100px;
 }
@@ -94,13 +94,13 @@ p {
   font-weight: strong;
   font-family: "Comfortaa", cursive;
   font-size: 25px;
-  position: fixed;
+  position: absolute;
   top: 515px;
   left: 100px;
 }
 
 #sf {
-  position: fixed;
+  position: absolute;
   top: 770px;
   left: 595px;
 }
@@ -113,7 +113,7 @@ button {
 }
 
 #sfYes {
-  position: fixed;
+  position: absolute;
   background-color: #59e575;
   font-size: 23px;
   top: 810px;
@@ -121,7 +121,7 @@ button {
 }
 
 #sfNo {
-  position: fixed;
+  position: absolute;
   background-color: #ed5c4b;
   font-size: 23px;
   top: 810px;
@@ -129,7 +129,7 @@ button {
 }
 
 #feedbackBox {
-  position: fixed;
+  position: absolute;
   background-color: grey;
   border-radius: 10px;
   height: 260px;
@@ -141,4 +141,14 @@ button {
   border: solid;
 }
 
+#pageTitle1 {
+  position: absolute;
+  left: 540px;
+  top: 5px;
+}
 
+#subtitle {
+  position: absolute;
+  left: 450px;
+  top: 70px;
+}
