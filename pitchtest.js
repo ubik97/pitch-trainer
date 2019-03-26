@@ -10,7 +10,9 @@ function gameplay() {
 
 
   function compare() {
-    
+    if (playedFreq!==original) {
+      console.log("Wrong note!!");
+    }
   }
 
 
