@@ -103,8 +103,8 @@ p {
 
 #sf {
   position: absolute;
-  top: 770px;
-  left: 595px;
+  top: 500px;
+  left: 290px;
 }
 
 button {
@@ -119,16 +119,16 @@ button {
   position: absolute;
   background-color: #59e575;
   font-size: 23px;
-  top: 810px;
-  left: 585px;
+  top: 550px;
+  left: 293px;
 }
 
 #sfNo {
   position: absolute;
   background-color: #ed5c4b;
   font-size: 23px;
-  top: 810px;
-  left: 660px;
+  top: 550px;
+  left: 353px;
 }
 
 #outputDiv {
