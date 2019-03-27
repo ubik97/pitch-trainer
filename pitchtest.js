@@ -24,7 +24,7 @@ function gameplay(midgame) {
       document.getElementById('feedbackBox').style.color = "#c41f17";
     }
     if (playedFreq==original) {
-      document.getElementById('feedbackBox').innerHTML = "Correct! That was a(n)! " + sharpsNameArr[idx];
+      document.getElementById('feedbackBox').innerHTML = "Correct! That was a(n) " + sharpsNameArr[idx] + "!";
       document.getElementById('feedbackBox').style.color = "#195b00";
     }
 
