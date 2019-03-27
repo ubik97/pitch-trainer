@@ -12,9 +12,9 @@ function includeSharps(value) {
   sharps = value;
 }
 
-function gameplay() {
-      original = noteGenerator();
-      document.getElementById("start").disabled = true;
+function gameplay(midgame) {
+        original = noteGenerator();
+        document.getElementById("start").disabled = true;
   }
 
 
@@ -34,32 +34,20 @@ function gameplay() {
   function notePlayed(note) {
     playFreq(note);
     compare(original, playedFreq);
-    wait(1000);
-    gameplay();
-  }
 
-  function wait(ms){
-   var start = new Date().getTime();
-   var end = start;
-   while(end < start + ms) {
-     end = new Date().getTime();
   }
-}
-//doc.getelement.style.color = "hex-value";
 
 function noteGenerator() {
   if (sharps = true) {
   idx = randomInt(0, 11);
-  console.log(idx);
   correct = noteArr[idx];
-  console.log(correct);
+  console.log("Correct frequency: " + correct);
   playFreq(correct);
   return correct;
 }
 
   if (sharps = false) {
     idx = randomInt(0, 6);
-    console.log(idx);
     correct = noteArr[idx];
     console.log(correct);
     playFreq(correct);
@@ -82,7 +70,6 @@ function playFreq(freq) {
     var dur = 0.5;
     var stopVal = 10;
     playedFreq = freq;
-    console.log(freq);
 
     oscillator.type = 'sine';
     oscillator.frequency.value = freq;
@@ -95,4 +82,3 @@ function playFreq(freq) {
 
 
 }
-

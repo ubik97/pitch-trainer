@@ -161,3 +161,16 @@ button {
   left: 100px;
   top: 60px;
 }
+
+#next {
+  width: 150px;
+  height: 75px;
+  background-color: #b06ff2;
+  color: white;
+  font-weight: strong;
+  font-family: "Comfortaa", cursive;
+  font-size: 25px;
+  position: absolute;
+  top: 415px;
+  left: 270px;
+}
