@@ -9,6 +9,7 @@ var idx;
 var counterInput;
 var count;
 var rawCorrect;
+var a;
 
 function includeSharps(value) {
   document.getElementById("start").disabled = false;
@@ -20,7 +21,7 @@ function gameplay(midgame) {
         document.getElementById("start").disabled = true;
   }
 
-
+//correct/incorrect
   function compare() {
     if (playedFreq!==original) {
       document.getElementById('feedbackBox').innerHTML = "Incorrect: That was a(n) " + sharpsNameArr[idx];
@@ -35,21 +36,27 @@ function gameplay(midgame) {
     return counterInput;
   }
 
-  function resultCounter(counterInput) {
-    rawCorrect += counterInput;
+//score counter
+  function resultCounter(param) {
+    console.log(param);
+    rawCorrect = rawCorrect + param;
     count = count + 1;
 
 
-
-    console.log("correct: "+rawCorrect+"total: "+count);
+    console.log("correct: " + rawCorrect + " total: " + count);
   }
 
+//note input
   function notePlayed(note) {
     playFreq(note);
     counterInput = compare(original, playedFreq);
-    resultCounter(counterInput);
+    a == counterInput;
+    resultCounter(a);
+
+    console.log("bleh " + counterInput);
   }
 
+//random note noteGenerator
 function noteGenerator() {
   if (sharps = true) {
   idx = randomInt(0, 11);
@@ -59,6 +66,7 @@ function noteGenerator() {
   return correct;
 }
 
+//enables no sharps mode
   if (sharps = false) {
     idx = randomInt(0, 6);
     correct = noteArr[idx];
@@ -76,7 +84,7 @@ function randomInt(min, max) {
 }
 
 
-
+//sine oscillator
 function playFreq(freq) {
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     var oscillator = audioCtx.createOscillator();
@@ -95,4 +103,3 @@ function playFreq(freq) {
 
 
 }
-
