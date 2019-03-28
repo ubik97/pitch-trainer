@@ -6,6 +6,9 @@ var playedFreq;
 let noteArr = [261.63, 293.67, 329.63, 349.23, 392, 440, 493.88, 277.18, 311.13, 369.99, 415.3, 466.16];
 let sharpsNameArr = ["c", "d", "e", "f", "g", "a", "b", "c#", "d#", "f#", "g#", "a#"];
 var idx;
+var counterInput;
+var count;
+var rawCorrect;
 
 function includeSharps(value) {
   document.getElementById("start").disabled = false;
@@ -22,19 +25,29 @@ function gameplay(midgame) {
     if (playedFreq!==original) {
       document.getElementById('feedbackBox').innerHTML = "Incorrect: That was a(n) " + sharpsNameArr[idx];
       document.getElementById('feedbackBox').style.color = "#c41f17";
+      counterInput = 0;
     }
     if (playedFreq==original) {
       document.getElementById('feedbackBox').innerHTML = "Correct! That was a(n) " + sharpsNameArr[idx] + "!";
       document.getElementById('feedbackBox').style.color = "#195b00";
+      counterInput = 1;
     }
-
+    return counterInput;
   }
 
+  function resultCounter(counterInput) {
+    rawCorrect += counterInput;
+    count = count + 1;
+
+
+
+    console.log("correct: "+rawCorrect+"total: "+count);
+  }
 
   function notePlayed(note) {
     playFreq(note);
-    compare(original, playedFreq);
-
+    counterInput = compare(original, playedFreq);
+    resultCounter(counterInput);
   }
 
 function noteGenerator() {
@@ -82,3 +95,4 @@ function playFreq(freq) {
 
 
 }
+
