@@ -7,8 +7,8 @@ let noteArr = [261.63, 293.67, 329.63, 349.23, 392, 440, 493.88, 277.18, 311.13,
 let sharpsNameArr = ["c", "d", "e", "f", "g", "a", "b", "c#", "d#", "f#", "g#", "a#"];
 var idx;
 var counterInput;
-var count;
-var rawCorrect;
+var count = 0;
+var rawCorrect = 0;
 var a;
 
 function includeSharps(value) {
@@ -46,34 +46,41 @@ function gameplay(midgame) {
     console.log("correct: " + rawCorrect + " total: " + count);
   }
 
+//display score
+   function displayScore() {
+     let incorrect = count - rawCorrect;
+     document.getElementById('feedbackBox').innerHTML = "Correct: " + rawCorrect + " Incorrect: " + incorrect + " Attempts: " + count;
+     document.getElementById('feedbackBox').style.color = "black";
+   }
+
+
 //note input
   function notePlayed(note) {
     playFreq(note);
     counterInput = compare(original, playedFreq);
-    a == counterInput;
-    resultCounter(a);
+    resultCounter(counterInput);
 
     console.log("bleh " + counterInput);
   }
 
 //random note noteGenerator
-function noteGenerator() {
-  if (sharps = true) {
-  idx = randomInt(0, 11);
-  correct = noteArr[idx];
-  console.log("Correct frequency: " + correct);
-  playFreq(correct);
-  return correct;
-}
+  function noteGenerator() {
+    if (sharps = true) {
+        idx = randomInt(0, 11);
+        correct = noteArr[idx];
+        console.log("Correct frequency: " + correct);
+        playFreq(correct);
+        return correct;
+      }
 
 //enables no sharps mode
-  if (sharps = false) {
-    idx = randomInt(0, 6);
-    correct = noteArr[idx];
-    console.log(correct);
-    playFreq(correct);
-    return correct;
-  }
+    if (sharps = false) {
+      idx = randomInt(0, 6);
+      correct = noteArr[idx];
+      console.log(correct);
+      playFreq(correct);
+      return correct;
+      }
 }
 
 //random number generator
