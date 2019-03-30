@@ -76,29 +76,31 @@ p {
 }
 
 #start {
-  width: 150px;
-  height: 75px;
   background-color: #59c0e5;
-  color: white;
-  font-weight: strong;
-  font-family: "Comfortaa", cursive;
-  font-size: 25px;
-  position: absolute;
   top: 415px;
   left: 100px;
 }
 
 #finish {
+  background-color: #59e575;
+  top: 515px;
+  left: 100px;
+}
+
+#next {
+  background-color: #b06ff2;
+  top: 415px;
+  left: 270px;
+}
+
+.largeButtons {
   width: 150px;
   height: 75px;
-  background-color: #59e575;
   color: white;
   font-weight: strong;
   font-family: "Comfortaa", cursive;
   font-size: 25px;
   position: absolute;
-  top: 515px;
-  left: 100px;
 }
 
 #sf {
@@ -161,18 +163,7 @@ button {
   top: 60px;
 }
 
-#next {
-  width: 150px;
-  height: 75px;
-  background-color: #b06ff2;
-  color: white;
-  font-weight: strong;
-  font-family: "Comfortaa", cursive;
-  font-size: 25px;
-  position: absolute;
-  top: 415px;
-  left: 270px;
-}
+
 
 #instructions {
   position: absolute;
@@ -190,3 +181,6 @@ button {
   margin: 20px;
 }
 
+#reset {
+
+}
