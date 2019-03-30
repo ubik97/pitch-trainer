@@ -182,5 +182,14 @@ button {
 }
 
 #reset {
-
+  position: absolute;
+  height: 50;
+  width: 75;
+  color: white;
+  font-weight: strong;
+  font-family: "Comfortaa", cursive;
+  font-size: 23px;
+  background-color: #ed5c4b;
+  top: 600px;
+  left: 135px;
 }

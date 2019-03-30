@@ -22,6 +22,10 @@ function gameplay(midgame) {
         document.getElementById("start").disabled = true;
   }
 
+function reset() {
+  document.getElementById("start").disabled = false;
+}
+
 //correct/incorrect
   function compare() {
     if (playedFreq!==original) {
@@ -108,6 +112,4 @@ function playFreq(freq) {
     oscillator.onended = stopVal;
     oscillator.start(0);
     oscillator.stop(audioCtx.currentTime + dur);
-
-
 }
