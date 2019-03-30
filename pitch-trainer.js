@@ -14,6 +14,7 @@ var a;
 function includeSharps(value) {
   document.getElementById("start").disabled = false;
   sharps = value;
+  console.log(sharps);
 }
 
 function gameplay(midgame) {
@@ -65,7 +66,7 @@ function gameplay(midgame) {
 
 //random note noteGenerator
   function noteGenerator() {
-    if (sharps = true) {
+    if (sharps) {
         idx = randomInt(0, 11);
         correct = noteArr[idx];
         console.log("Correct frequency: " + correct);
@@ -74,7 +75,7 @@ function gameplay(midgame) {
       }
 
 //enables no sharps mode
-    if (sharps = false) {
+    if (!sharps) {
       idx = randomInt(0, 6);
       correct = noteArr[idx];
       console.log(correct);
