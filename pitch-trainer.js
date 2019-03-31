@@ -1,4 +1,3 @@
-var attempted = false;
 var orignal;
 var sharps;
 var correct;
@@ -13,6 +12,8 @@ var a;
 
 function includeSharps(value) {
   document.getElementById("start").disabled = false;
+  document.getElementById("sfYes").disabled = true;
+  document.getElementById("sfNo").disabled = true;
   sharps = value;
   console.log(sharps);
 }
@@ -23,7 +24,12 @@ function gameplay(midgame) {
   }
 
 function reset() {
-  document.getElementById("start").disabled = false;
+  document.getElementById("start").disabled = true;
+  document.getElementById("sfYes").disabled = false;
+  document.getElementById("sfNo").disabled = false;
+  document.getElementById('feedbackBox').innerHTML = "";
+  count = 0;
+  rawCorrect = 0;
 }
 
 //correct/incorrect
@@ -56,6 +62,7 @@ function reset() {
      let incorrect = count - rawCorrect;
      document.getElementById('feedbackBox').innerHTML = "Correct: " + rawCorrect + " Incorrect: " + incorrect + " Attempts: " + count;
      document.getElementById('feedbackBox').style.color = "black";
+     document.getElementById('feedbackBox').style.left = "75px";
    }
 
 

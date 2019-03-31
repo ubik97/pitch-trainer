@@ -76,9 +76,13 @@ p {
 }
 
 #start {
-  background-color: #59c0e5;
+  background-color: #11c0e5;
   top: 415px;
   left: 100px;
+}
+
+#start:hover {
+  background-color: #59c0e5;
 }
 
 #finish {
@@ -87,10 +91,18 @@ p {
   left: 100px;
 }
 
+#finish:hover {
+  background-color: #76f27e;
+}
+
 #next {
   background-color: #b06ff2;
   top: 415px;
   left: 270px;
+}
+
+#next:hover {
+  background-color: #c999f7;
 }
 
 .largeButtons {
@@ -125,12 +137,20 @@ button {
   left: 293px;
 }
 
+#sfYes:hover {
+  background-color: #76f27e;
+}
+
 #sfNo {
   position: absolute;
-  background-color: #ed5c4b;
+  background-color: #f45050;
   font-size: 23px;
   top: 550px;
   left: 353px;
+}
+
+#sfNo:hover {
+  background-color: #f76f6f;
 }
 
 #outputDiv {
@@ -189,7 +209,11 @@ button {
   font-weight: strong;
   font-family: "Comfortaa", cursive;
   font-size: 23px;
-  background-color: #ed5c4b;
+  background-color: #f45050;
   top: 600px;
   left: 135px;
+}
+
+#reset:hover {
+  background-color: #f76f6f;
 }
