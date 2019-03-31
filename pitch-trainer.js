@@ -4,6 +4,7 @@ var correct;
 var playedFreq;
 let noteArr = [261.63, 293.67, 329.63, 349.23, 392, 440, 493.88, 277.18, 311.13, 369.99, 415.3, 466.16];
 let sharpsNameArr = ["c", "d", "e", "f", "g", "a", "b", "c#", "d#", "f#", "g#", "a#"];
+let noteIdArr = ["Cnat", "Dnat", "Enat", "Fnat", "Gnat", "Anat", "Bnat", "cSharpDiv", "dSharpDiv", "fSharpDiv", "gSharpDiv", "aSharpDiv"];
 var idx;
 var counterInput;
 var count = 0;
@@ -16,6 +17,14 @@ function includeSharps(value) {
   document.getElementById("sfNo").disabled = true;
   sharps = value;
   console.log(sharps);
+}
+
+function keyColor(original, correct) {
+  if (original==correct) {
+    var z = noteIdArr[idx];
+    console.log(z);
+    document.getElementById("Fnat").style.color = "#59e575";
+  }
 }
 
 function gameplay(midgame) {
@@ -52,8 +61,6 @@ function reset() {
     console.log(param);
     rawCorrect = rawCorrect + param;
     count = count + 1;
-
-
     console.log("correct: " + rawCorrect + " total: " + count);
   }
 
@@ -71,7 +78,7 @@ function reset() {
     playFreq(note);
     counterInput = compare(original, playedFreq);
     resultCounter(counterInput);
-
+    keyColor(original, correct);
     console.log("bleh " + counterInput);
   }
 

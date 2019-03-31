@@ -115,6 +115,14 @@ p {
   position: absolute;
 }
 
+.natural:hover {
+  background-color: #d6d7d8;
+}
+
+.sharp:hover {
+  background-color: #3a3a3a;
+}
+
 #sf {
   position: absolute;
   top: 500px;
