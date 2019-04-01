@@ -3,7 +3,7 @@ var sharps;
 var correct;
 var playedFreq;
 let noteArr = [261.63, 293.67, 329.63, 349.23, 392, 440, 493.88, 277.18, 311.13, 369.99, 415.3, 466.16];
-let sharpsNameArr = ["c", "d", "e", "f", "g", "a", "b", "c#", "d#", "f#", "g#", "a#"];
+let noteNamesArr = ["c", "d", "e", "f", "g", "a", "b", "c#", "d#", "f#", "g#", "a#"];
 let noteIdArr = ["Cnat", "Dnat", "Enat", "Fnat", "Gnat", "Anat", "Bnat", "cSharpDiv", "dSharpDiv", "fSharpDiv", "gSharpDiv", "aSharpDiv"];
 var idx;
 var counterInput;
@@ -17,14 +17,6 @@ function includeSharps(value) {
   document.getElementById("sfNo").disabled = true;
   sharps = value;
   console.log(sharps);
-}
-
-function keyColor(original, correct) {
-  if (original==correct) {
-    var z = noteIdArr[idx];
-    console.log(z);
-    document.getElementById("Fnat").style.color = "#59e575";
-  }
 }
 
 function gameplay(midgame) {
@@ -44,13 +36,23 @@ function reset() {
 //correct/incorrect
   function compare() {
     if (playedFreq!==original) {
-      document.getElementById('feedbackBox').innerHTML = "Incorrect: That was a(n) " + sharpsNameArr[idx];
-      document.getElementById('feedbackBox').style.color = "#c41f17";
+      if (noteNamesArr[idx] == "e" || noteNamesArr[idx] == "f" || noteNamesArr[idx] == "a" || noteNamesArr[idx] == "f#" || noteNamesArr[idx] == "a#") {
+        document.getElementById('feedbackBox').innerHTML = "Incorrect: That was an " + noteNamesArr[idx];
+        document.getElementById('feedbackBox').style.color = "#c41f17";
+      } else {
+        document.getElementById('feedbackBox').innerHTML = "Incorrect: That was a " + noteNamesArr[idx];
+        document.getElementById('feedbackBox').style.color = "#c41f17";
+      }
       counterInput = 0;
     }
     if (playedFreq==original) {
-      document.getElementById('feedbackBox').innerHTML = "Correct! That was a(n) " + sharpsNameArr[idx] + "!";
-      document.getElementById('feedbackBox').style.color = "#195b00";
+      if (noteNamesArr[idx] == "e" || noteNamesArr[idx] == "f" || noteNamesArr[idx] == "a" || noteNamesArr[idx] == "f#" || noteNamesArr[idx] == "a#") {
+        document.getElementById('feedbackBox').innerHTML = "Correct! That was an " + noteNamesArr[idx] + "!";
+        document.getElementById('feedbackBox').style.color = "#195b00";
+      } else {
+        document.getElementById('feedbackBox').innerHTML = "Incorrect: That was a " + noteNamesArr[idx];
+        document.getElementById('feedbackBox').style.color = "#c41f17";
+      }
       counterInput = 1;
     }
     return counterInput;
@@ -78,7 +80,6 @@ function reset() {
     playFreq(note);
     counterInput = compare(original, playedFreq);
     resultCounter(counterInput);
-    keyColor(original, correct);
     console.log("bleh " + counterInput);
   }
 
