@@ -20,7 +20,7 @@ function includeSharps(value) {
 }
 
 function gameplay(midgame) {
-        original = noteGenerator();
+        correct = noteGenerator();
         document.getElementById("start").disabled = true;
   }
 
@@ -35,12 +35,12 @@ function reset() {
 
 //correct/incorrect
   function compare() {
-    if (playedFreq!==original) {
+    if (playedFreq!==correct) {
       document.getElementById('feedbackBox').innerHTML = "Incorrect: That was a(n) " + sharpsNameArr[idx];
       document.getElementById('feedbackBox').style.color = "#c41f17";
       counterInput = 0;
     }
-    if (playedFreq==original) {
+    if (playedFreq==correct) {
       document.getElementById('feedbackBox').innerHTML = "Correct! That was a(n) " + sharpsNameArr[idx] + "!";
       document.getElementById('feedbackBox').style.color = "#195b00";
       counterInput = 1;
@@ -68,7 +68,7 @@ function reset() {
 //note input
   function notePlayed(note) {
     playFreq(note);
-    counterInput = compare(original, playedFreq);
+    counterInput = compare(correct, playedFreq);
     resultCounter(counterInput);
     console.log("bleh " + counterInput);
   }
@@ -80,17 +80,15 @@ function reset() {
         correct = noteArr[idx];
         console.log("Correct frequency: " + correct);
         playFreq(correct);
-        return correct;
       }
 
-//enables no sharps mode
     if (!sharps) {
       idx = randomInt(0, 6);
       correct = noteArr[idx];
       console.log(correct);
       playFreq(correct);
-      return correct;
       }
+    return correct;
 }
 
 //random number generator
@@ -113,4 +111,5 @@ function playFreq(freq) {
     oscillator.start(0);
     oscillator.stop(0.5);
 }
+
 
