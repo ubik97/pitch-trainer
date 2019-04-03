@@ -3,7 +3,7 @@ var sharps;
 var correct;
 var playedFreq;
 let noteArr = [261.63, 293.67, 329.63, 349.23, 392, 440, 493.88, 277.18, 311.13, 369.99, 415.3, 466.16];
-let noteNamesArr = ["c", "d", "e", "f", "g", "a", "b", "c#", "d#", "f#", "g#", "a#"];
+let sharpsNameArr = ["c", "d", "e", "f", "g", "a", "b", "c#", "d#", "f#", "g#", "a#"];
 let noteIdArr = ["Cnat", "Dnat", "Enat", "Fnat", "Gnat", "Anat", "Bnat", "cSharpDiv", "dSharpDiv", "fSharpDiv", "gSharpDiv", "aSharpDiv"];
 var idx;
 var counterInput;
@@ -36,23 +36,13 @@ function reset() {
 //correct/incorrect
   function compare() {
     if (playedFreq!==original) {
-      if (noteNamesArr[idx] == "e" || noteNamesArr[idx] == "f" || noteNamesArr[idx] == "a" || noteNamesArr[idx] == "f#" || noteNamesArr[idx] == "a#") {
-        document.getElementById('feedbackBox').innerHTML = "Incorrect: That was an " + noteNamesArr[idx];
-        document.getElementById('feedbackBox').style.color = "#c41f17";
-      } else {
-        document.getElementById('feedbackBox').innerHTML = "Incorrect: That was a " + noteNamesArr[idx];
-        document.getElementById('feedbackBox').style.color = "#c41f17";
-      }
+      document.getElementById('feedbackBox').innerHTML = "Incorrect: That was a(n) " + sharpsNameArr[idx];
+      document.getElementById('feedbackBox').style.color = "#c41f17";
       counterInput = 0;
     }
     if (playedFreq==original) {
-      if (noteNamesArr[idx] == "e" || noteNamesArr[idx] == "f" || noteNamesArr[idx] == "a" || noteNamesArr[idx] == "f#" || noteNamesArr[idx] == "a#") {
-        document.getElementById('feedbackBox').innerHTML = "Correct! That was an " + noteNamesArr[idx] + "!";
-        document.getElementById('feedbackBox').style.color = "#195b00";
-      } else {
-        document.getElementById('feedbackBox').innerHTML = "Incorrect: That was a " + noteNamesArr[idx];
-        document.getElementById('feedbackBox').style.color = "#c41f17";
-      }
+      document.getElementById('feedbackBox').innerHTML = "Correct! That was a(n) " + sharpsNameArr[idx] + "!";
+      document.getElementById('feedbackBox').style.color = "#195b00";
       counterInput = 1;
     }
     return counterInput;
@@ -115,16 +105,12 @@ function randomInt(min, max) {
 function playFreq(freq) {
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     var oscillator = audioCtx.createOscillator();
-    var dur = 0.5;
-    var stopVal = 10;
     playedFreq = freq;
-
     oscillator.type = 'sine';
     oscillator.frequency.value = freq;
     oscillator.gain = 0.1;
     oscillator.connect(audioCtx.destination);
-
-    oscillator.onended = stopVal;
     oscillator.start(0);
-    oscillator.stop(audioCtx.currentTime + dur);
+    oscillator.stop(0.5);
 }
+
