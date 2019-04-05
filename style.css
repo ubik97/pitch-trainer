@@ -13,8 +13,6 @@ html {
    src: url('https://fonts.googleapis.com/css?family=Comfortaa');
  }
 
-
-
 p {
   font-family: 'Comfortaa', cursive;
   color: white;
@@ -23,8 +21,6 @@ p {
 #key {
   font-size: 0;
 }
-
-
 
 .natural {
   height: 200px;
@@ -129,6 +125,15 @@ p {
   left: 290px;
 }
 
+#sOnly {
+  position: absolute;
+  background-color: blue;
+  font-size: 18px;
+  top: 590px;
+  left: 305px;
+
+}
+
 button {
   color: white;
   font-weight: strong;
@@ -225,3 +230,4 @@ button {
 #reset:hover {
   background-color: #f76f6f;
 }
+
