@@ -4,7 +4,6 @@ var correct;
 var playedFreq;
 let noteArr = [261.63, 293.67, 329.63, 349.23, 392, 440, 493.88, 277.18, 311.13, 369.99, 415.3, 466.16];
 let sharpsNameArr = ["c", "d", "e", "f", "g", "a", "b", "c#", "d#", "f#", "g#", "a#"];
-let noteIdArr = ["Cnat", "Dnat", "Enat", "Fnat", "Gnat", "Anat", "Bnat", "cSharpDiv", "dSharpDiv", "fSharpDiv", "gSharpDiv", "aSharpDiv"];
 var idx;
 var counterInput;
 var count = 0;
@@ -22,6 +21,7 @@ function includeSharps(value) {
 function gameplay(midgame) {
         correct = noteGenerator();
         document.getElementById("start").disabled = true;
+        document.getElementById('next').disabled = false;
   }
 
 function reset() {
@@ -29,6 +29,7 @@ function reset() {
   document.getElementById("sfYes").disabled = false;
   document.getElementById("sfNo").disabled = false;
   document.getElementById('feedbackBox').innerHTML = "";
+  document.getElementById('next').disabled = true;
   count = 0;
   rawCorrect = 0;
 }
@@ -49,10 +50,10 @@ function reset() {
   }
 
 //score counter
-  function resultCounter(param) {
-    console.log(param);
-    rawCorrect = rawCorrect + param;
-    count = count + 1;
+  function resultCounter(n) {
+    console.log(n);
+    rawCorrect = rawCorrect + n;
+    count++;
     console.log("correct: " + rawCorrect + " total: " + count);
   }
 
@@ -70,32 +71,36 @@ function reset() {
     playFreq(note);
     counterInput = compare(correct, playedFreq);
     resultCounter(counterInput);
-    console.log("bleh " + counterInput);
   }
 
 //random note noteGenerator
   function noteGenerator() {
-    if (sharps) {
+    switch (sharps) {
+      case true:
         idx = randomInt(0, 11);
         correct = noteArr[idx];
-        console.log("Correct frequency: " + correct);
-        playFreq(correct);
-      }
+        break;
 
-    if (!sharps) {
-      idx = randomInt(0, 6);
-      correct = noteArr[idx];
-      console.log(correct);
-      playFreq(correct);
-      }
+      case false:
+        idx = randomInt(0, 6);
+        correct = noteArr[idx];
+        break;
+
+      case 2:
+        idx = randomInt(7, 11);
+        correct = noteArr[idx];
+        break;
+
+    }
+    playFreq(correct);
     return correct;
 }
 
 //random number generator
 function randomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  let int = Math.random() * (max - min + 1);
+  int = Math.floor(int) + min;
+  return int;
 }
 
 
