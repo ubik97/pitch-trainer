@@ -17,10 +17,11 @@
 <h3><p id="subtitle">An online tool for achieving perfect pitch!</p></h3>
 
 <button id="start" class="largeButtons" onclick="gameplay()" disabled>Start</button>
-<button id="next" class="largeButtons" onclick="gameplay()">Next pitch</button>
+<button id="next" class="largeButtons" onclick="gameplay()" disabled>Next pitch</button>
 <button id="finish" class="largeButtons" onclick="displayScore()">Finish</button>
 <button id="sfYes" onclick="includeSharps(true)">Yes</button>
 <button id="sfNo" onclick="includeSharps(false)">No</button>
+<button id="sOnly" onclick="includeSharps(2)">Only</button>
 <button id="reset" onclick="reset()">Reset</button>
 <div id="sf"><p>Sharps/Flats?</p></div>
 <div id="outputDiv">
@@ -61,10 +62,12 @@
   (Hint: If you're a beginner, start out with just the naturals, it's easier). Then select start.
   Listen to the tone and play the note you think it is. The game will tell you if you are correct.
   To play another note, press the next button and repeat. When you are done, press finished to get
-  a summary of your progress. <br/><br/>Thanks for playing, and have fun!</p>
+  a summary of your progress. Also, I reccomend that your keep your volume on 10 or below, the
+  keyboard can be pretty loud! <br/><br/>Thanks for playing, and have fun!</p>
 </div>
 
 </body>
 
 </html>
+
 
