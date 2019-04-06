@@ -127,11 +127,14 @@ p {
 
 #sOnly {
   position: absolute;
-  background-color: blue;
+  background-color: #b06ff2;
   font-size: 18px;
   top: 590px;
-  left: 305px;
+  left: 317px;
+}
 
+#sOnly:hover {
+  background-color: #c999f7;
 }
 
 button {
@@ -170,9 +173,9 @@ button {
   position: absolute;
   border-radius: 10px;
   height: 150px;
-  width: 400px;
+  width: 350px;
   background-color: #73c7e2;
-  left: 440px;
+  left: 465px;
   top: 180px;
   border-color: blue;
   border: solid;
@@ -192,11 +195,9 @@ button {
 
 #feedbackBox {
   position: relative;
-  left: 100px;
+  left: 80px;
   top: 60px;
 }
-
-
 
 #instructions {
   position: absolute;
@@ -230,4 +231,3 @@ button {
 #reset:hover {
   background-color: #f76f6f;
 }
-

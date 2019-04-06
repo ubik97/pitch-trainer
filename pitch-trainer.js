@@ -8,31 +8,22 @@ var idx;
 var counterInput;
 var count = 0;
 var rawCorrect = 0;
-var a;
 
 function includeSharps(value) {
-  document.getElementById("start").disabled = false;
-  document.getElementById("sfYes").disabled = true;
-  document.getElementById("sfNo").disabled = true;
+  document.getElementById('start').disabled = false;
+  document.getElementById('sfYes').disabled = true;
+  document.getElementById('sfNo').disabled = true;
+  document.getElementById('sOnly').disabled = true;
   sharps = value;
-  console.log(sharps);
 }
 
-function gameplay(midgame) {
-        correct = noteGenerator();
-        document.getElementById("start").disabled = true;
+
+function nextNote() {
+        document.getElementById('start').disabled = true;
         document.getElementById('next').disabled = false;
+        document.getElementById('finish').disabled = false;
+        correct = noteGenerator();
   }
-
-function reset() {
-  document.getElementById("start").disabled = true;
-  document.getElementById("sfYes").disabled = false;
-  document.getElementById("sfNo").disabled = false;
-  document.getElementById('feedbackBox').innerHTML = "";
-  document.getElementById('next').disabled = true;
-  count = 0;
-  rawCorrect = 0;
-}
 
 //correct/incorrect
   function compare() {
@@ -40,8 +31,7 @@ function reset() {
       document.getElementById('feedbackBox').innerHTML = "Incorrect: That was a(n) " + sharpsNameArr[idx];
       document.getElementById('feedbackBox').style.color = "#c41f17";
       counterInput = 0;
-    }
-    if (playedFreq==correct) {
+    } else {
       document.getElementById('feedbackBox').innerHTML = "Correct! That was a(n) " + sharpsNameArr[idx] + "!";
       document.getElementById('feedbackBox').style.color = "#195b00";
       counterInput = 1;
@@ -62,7 +52,7 @@ function reset() {
      let incorrect = count - rawCorrect;
      document.getElementById('feedbackBox').innerHTML = "Correct: " + rawCorrect + " Incorrect: " + incorrect + " Attempts: " + count;
      document.getElementById('feedbackBox').style.color = "black";
-     document.getElementById('feedbackBox').style.left = "75px";
+     document.getElementById('feedbackBox').style.left = "48px";
    }
 
 
@@ -76,21 +66,20 @@ function reset() {
 //random note noteGenerator
   function noteGenerator() {
     switch (sharps) {
-      case true:
+      case 1:
         idx = randomInt(0, 11);
         correct = noteArr[idx];
         break;
 
-      case false:
+      case 2:
         idx = randomInt(0, 6);
         correct = noteArr[idx];
         break;
 
-      case 2:
+      case 3:
         idx = randomInt(7, 11);
         correct = noteArr[idx];
         break;
-
     }
     playFreq(correct);
     return correct;
@@ -117,4 +106,15 @@ function playFreq(freq) {
     oscillator.stop(0.5);
 }
 
-
+function reset() {
+  document.getElementById('start').disabled = true;
+  document.getElementById('finish').disabled = true;
+  document.getElementById('sfYes').disabled = false;
+  document.getElementById('sfNo').disabled = false;
+  document.getElementById('sOnly').disabled = false;
+  document.getElementById('feedbackBox').innerHTML = "";
+  document.getElementById('next').disabled = true;
+  document.getElementById('feedbackBox').style.left = "80px";
+  count = 0;
+  rawCorrect = 0;
+}
